@@ -9,6 +9,8 @@ import Foundation
 import HealthKit
 
 class WorkoutManager: NSObject, ObservableObject {
+    @Published var running = false
+
     var selectedWorkout: HKWorkoutActivityType? {
         didSet {
             guard let selectedWorkout = selectedWorkout else {
@@ -36,6 +38,7 @@ class WorkoutManager: NSObject, ObservableObject {
         }
 
         builder?.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore, workoutConfiguration: configuration)
+        session?.delegate = self
 
         let startDate = Date()
         session?.startActivity(with: startDate)
@@ -63,4 +66,43 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
 
+    func pause() {
+        session?.pause()
+    }
+
+    func resume() {
+        session?.resume()
+    }
+
+    func togglePause() {
+        if running {
+            pause()
+        } else {
+            resume()
+        }
+    }
+
+    func endWorkout() {
+        session?.end()
+    }
+
+}
+
+extension WorkoutManager: HKWorkoutSessionDelegate {
+    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+    }
+
+    func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
+        DispatchQueue.main.async {
+            self.running = toState == .running
+        }
+
+        if toState == .ended {
+            builder?.endCollection(withEnd: date, completion: { success, error in
+                self.builder?.finishWorkout(completion: { workout, error in
+
+                })
+            })
+        }
+    }
 }
