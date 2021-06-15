@@ -24,6 +24,7 @@
 		780DA65226785F4400E7595F /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA65126785F4400E7595F /* ElapsedTimeView.swift */; };
 		780DA6542678630C00E7595F /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6532678630C00E7595F /* ControlsView.swift */; };
 		780DA6562678663B00E7595F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6552678663B00E7595F /* SummaryView.swift */; };
+		780DA6582678786200E7595F /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6572678786200E7595F /* ActivityRingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		780DA65126785F4400E7595F /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
 		780DA6532678630C00E7595F /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		780DA6552678663B00E7595F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		780DA6572678786200E7595F /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				780DA6532678630C00E7595F /* ControlsView.swift */,
 				780DA65126785F4400E7595F /* ElapsedTimeView.swift */,
 				780DA64F26785B3F00E7595F /* MetricsView.swift */,
+				780DA6572678786200E7595F /* ActivityRingsView.swift */,
 				780DA6552678663B00E7595F /* SummaryView.swift */,
 				780DA64A267857E400E7595F /* SessionPagingView.swift */,
 			);
@@ -422,6 +425,7 @@
 				780DA65226785F4400E7595F /* ElapsedTimeView.swift in Sources */,
 				780DA6542678630C00E7595F /* ControlsView.swift in Sources */,
 				780DA6172678541A00E7595F /* NotificationController.swift in Sources */,
+				780DA6582678786200E7595F /* ActivityRingsView.swift in Sources */,
 				780DA65026785B3F00E7595F /* MetricsView.swift in Sources */,
 				780DA6152678541A00E7595F /* StartView.swift in Sources */,
 				780DA61B2678541A00E7595F /* ComplicationController.swift in Sources */,
