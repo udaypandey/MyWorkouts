@@ -13,7 +13,7 @@ struct StartView: View {
 
     var body: some View {
         List(workoutTypes) { workoutType in
-            NavigationLink(workoutType.name, destination: Text(workoutType.name))
+            NavigationLink(workoutType.name, destination: SessionPagingView())
                 .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
         }
         .listStyle(.carousel)
