@@ -25,6 +25,8 @@
 		780DA6542678630C00E7595F /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6532678630C00E7595F /* ControlsView.swift */; };
 		780DA6562678663B00E7595F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6552678663B00E7595F /* SummaryView.swift */; };
 		780DA6582678786200E7595F /* ActivityRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6572678786200E7595F /* ActivityRingsView.swift */; };
+		780DA65B26787BF200E7595F /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA65A26787BF200E7595F /* WorkoutManager.swift */; };
+		780DA65F26787FD400E7595F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780DA65E26787FD400E7595F /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,9 @@
 		780DA6532678630C00E7595F /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		780DA6552678663B00E7595F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		780DA6572678786200E7595F /* ActivityRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRingsView.swift; sourceTree = "<group>"; };
+		780DA65A26787BF200E7595F /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		780DA65C26787FD400E7595F /* MyWorkouts WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MyWorkouts WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		780DA65E26787FD400E7595F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780DA65F26787FD400E7595F /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +148,7 @@
 				780DA62A2678541B00E7595F /* MyWorkoutsTests */,
 				780DA6342678541B00E7595F /* MyWorkoutsUITests */,
 				780DA5FF2678541900E7595F /* Products */,
+				780DA65D26787FD400E7595F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +175,8 @@
 		780DA6112678541A00E7595F /* MyWorkouts WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				780DA65C26787FD400E7595F /* MyWorkouts WatchKit Extension.entitlements */,
+				780DA65926787BD100E7595F /* Workouts */,
 				780DA64E2678580B00E7595F /* Notifications */,
 				780DA64D267857FA00E7595F /* Main */,
 				780DA64C267857EE00E7595F /* Views */,
@@ -233,6 +242,22 @@
 			children = (
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		780DA65926787BD100E7595F /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				780DA65A26787BF200E7595F /* WorkoutManager.swift */,
+			);
+			path = Workouts;
+			sourceTree = "<group>";
+		};
+		780DA65D26787FD400E7595F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				780DA65E26787FD400E7595F /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +452,7 @@
 				780DA6172678541A00E7595F /* NotificationController.swift in Sources */,
 				780DA6582678786200E7595F /* ActivityRingsView.swift in Sources */,
 				780DA65026785B3F00E7595F /* MetricsView.swift in Sources */,
+				780DA65B26787BF200E7595F /* WorkoutManager.swift in Sources */,
 				780DA6152678541A00E7595F /* StartView.swift in Sources */,
 				780DA61B2678541A00E7595F /* ComplicationController.swift in Sources */,
 				780DA6132678541A00E7595F /* MyWorkoutsApp.swift in Sources */,
@@ -596,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "MyWorkouts WatchKit Extension/MyWorkouts WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyWorkouts WatchKit Extension/Preview Content\"";
@@ -604,7 +631,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MyWorkouts WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "MyWorkouts WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleExecutable = "MyWorkouts WatchKit Extension";
+				INFOPLIST_KEY_CFBundleName = "MyWorkouts WatchKit Extension";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MyWorkouts_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -628,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "MyWorkouts WatchKit Extension/MyWorkouts WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyWorkouts WatchKit Extension/Preview Content\"";
@@ -636,7 +667,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MyWorkouts WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "MyWorkouts WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleExecutable = "MyWorkouts WatchKit Extension";
+				INFOPLIST_KEY_CFBundleName = "MyWorkouts WatchKit Extension";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = MyWorkouts_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
