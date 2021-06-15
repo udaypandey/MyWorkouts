@@ -23,6 +23,7 @@
 		780DA65026785B3F00E7595F /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA64F26785B3F00E7595F /* MetricsView.swift */; };
 		780DA65226785F4400E7595F /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA65126785F4400E7595F /* ElapsedTimeView.swift */; };
 		780DA6542678630C00E7595F /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6532678630C00E7595F /* ControlsView.swift */; };
+		780DA6562678663B00E7595F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780DA6552678663B00E7595F /* SummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		780DA64F26785B3F00E7595F /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 		780DA65126785F4400E7595F /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
 		780DA6532678630C00E7595F /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		780DA6552678663B00E7595F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				780DA6532678630C00E7595F /* ControlsView.swift */,
 				780DA65126785F4400E7595F /* ElapsedTimeView.swift */,
 				780DA64F26785B3F00E7595F /* MetricsView.swift */,
+				780DA6552678663B00E7595F /* SummaryView.swift */,
 				780DA64A267857E400E7595F /* SessionPagingView.swift */,
 			);
 			path = Views;
@@ -423,6 +426,7 @@
 				780DA6152678541A00E7595F /* StartView.swift in Sources */,
 				780DA61B2678541A00E7595F /* ComplicationController.swift in Sources */,
 				780DA6132678541A00E7595F /* MyWorkoutsApp.swift in Sources */,
+				780DA6562678663B00E7595F /* SummaryView.swift in Sources */,
 				780DA6192678541A00E7595F /* NotificationView.swift in Sources */,
 				780DA64B267857E400E7595F /* SessionPagingView.swift in Sources */,
 			);
